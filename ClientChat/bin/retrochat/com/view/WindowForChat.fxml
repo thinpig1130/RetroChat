@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="hboxMain" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #304d7e;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retrochat.com.client.ChatRoomControl">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #003973; -fx-border-color: #124679; -fx-border-width: 3px;">
+         <children>
+            <Label fx:id="labNickname" text="대화명 (나)" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <ListView fx:id="listNick" prefHeight="280.0" prefWidth="250.0" style="-fx-background-color: #304d7e; -fx-border-color: #124679; -fx-border-width: 3px;">
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin></ListView>
+            <Label fx:id="labRoomInfo" alignment="TOP_LEFT" prefHeight="120.0" prefWidth="189.0" text=" 방소개를 출력합니다. 내용을 많이 입력하면 어떻게 될까요?" textFill="#7ea3d1" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="60.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="labRoomStatus" text="WelCome to the '방명'" textFill="#7ea3d1">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding></Label>
+                  <Button fx:id="btnOutRoom" mnemonicParsing="false" onAction="#actOutRoom" style="-fx-background-color: #003973;" text="EXIT" textFill="#7ea3d1">
+                     <padding>
+                        <Insets bottom="8.0" left="15.0" right="15.0" top="8.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" />
+                     </HBox.margin></Button>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="16.0" right="16.0" top="5.0" />
+               </padding>
+            </HBox>
+            <ListView fx:id="listMsg" prefHeight="420.0" prefWidth="200.0" style="-fx-background-color: #7ea3d1; -fx-background-radius: 12px; -fx-border-width: 3px; -fx-border-color: #124679; -fx-border-radius: 10px;">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="15.0" right="15.0" />
+               </VBox.margin></ListView>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="txtSendMsg" onAction="#actSendMsgEnter" prefWidth="450.0" style="-fx-background-color: #7ea3d1; -fx-background-radius: 7px; -fx-border-color: #124679; -fx-border-width: 3px; -fx-border-radius: 5px;">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="8.0" left="15.0" right="15.0" top="8.0" />
+                     </padding></TextField>
+                  <Button fx:id="btnSendMsg" mnemonicParsing="false" onAction="#actSendMsg" style="-fx-background-color: #003973;" text="보내기" textFill="#7ea3d1">
+                     <HBox.margin>
+                        <Insets left="3.0" right="5.0" top="2.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="8.0" left="15.0" right="15.0" top="9.0" />
+                     </padding></Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="16.0" right="16.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets right="5.0" />
+   </padding>
+</HBox>

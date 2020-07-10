@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="retrochat.com.client.ClientIndexControl">
+   <center>
+      <HBox fx:id="hboxMain" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #304d7e;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="27.0" prefWidth="380.0">
+                     <children>
+                        <Label fx:id="statusLabel" prefHeight="19.0" prefWidth="245.0" text="채팅 서버 접속 중..." textFill="WHITE" />
+                        <Button fx:id="btnStartInfo" mnemonicParsing="false" onAction="#actUpdateInfo" style="-fx-background-color: #469bdf;" text="UPDATE INFO" textFill="WHITE">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ListView fx:id="listRoom" onMouseClicked="#actInRoom" prefHeight="260.0" prefWidth="340.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="5.0" />
+                     </VBox.margin>
+                  </ListView>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Label text="채팅방 정보" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea fx:id="txtChatRoomInfo" prefHeight="90.0" prefWidth="340.0" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" style="-fx-border-color: #304d7e; -fx-border-width: 3; -fx-border-radius: 10;">
+               <children>
+                  <Label text="&lt; 채팅방 만들기 &gt;" textFill="#304d7e">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <HBox prefHeight="28.0" prefWidth="200.0">
+                     <children>
+                        <Label prefWidth="60.0" text="방이름 ">
+                           <padding>
+                              <Insets bottom="4.0" right="10.0" top="4.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtRoomName" prefWidth="255.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="0.0" prefWidth="360.0">
+                     <children>
+                        <Label text="채팅방 소개  ">
+                           <padding>
+                              <Insets bottom="4.0" right="10.0" top="4.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="360.0">
+                     <children>
+                        <TextArea fx:id="txtaRoomInfo" prefHeight="50.0" prefWidth="315.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextArea>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <HBox prefHeight="13.0" prefWidth="360.0">
+                     <children>
+                        <Label prefWidth="60.0" text="대화명">
+                           <padding>
+                              <Insets bottom="4.0" right="10.0" top="4.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtNickName" prefWidth="255.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="0.0" prefWidth="360.0">
+                     <children>
+                        <Label text="대화명을 입력하세요." textFill="#7c0000">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="360.0">
+                     <children>
+                        <Button fx:id="btnMakeRoom" mnemonicParsing="false" onAction="#requestMakeRoom" prefWidth="100.0" style="-fx-background-color: #304d7e;" text="들어가기  ♡" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets bottom="8.0" top="8.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
